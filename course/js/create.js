@@ -76,6 +76,7 @@ run().then(solutions => {
 
     let selections = document.querySelectorAll(".selection");
     let currentSelected = 0;
+    document.getElementById("selectionText").innerHTML = `Schedule 1 / ${solutions.length}`;
 
     function show(i) {
         selections.forEach((sel, j) => sel.classList.toggle("active", i === j));
@@ -84,11 +85,13 @@ run().then(solutions => {
     document.getElementById("left").addEventListener('click', () => {
         // modulo is goofy
         currentSelected = (currentSelected - 1 + solutions.length) % solutions.length;
+        document.getElementById("selectionText").innerHTML = `Schedule ${currentSelected + 1} / ${solutions.length}`;
         show(currentSelected);
     });
 
     document.getElementById("right").addEventListener('click', () => {
         currentSelected = (currentSelected + 1) % solutions.length;
+        document.getElementById("selectionText").innerHTML = `Schedule ${currentSelected + 1} / ${solutions.length}`;
         show(currentSelected);
     });
 

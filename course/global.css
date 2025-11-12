@@ -1,7 +1,10 @@
-* { font-family: 'Funnel Display', sans-serif; }
+* {
+    font-family: 'Funnel Display', sans-serif;
+    color: #2d2a25;
+}
 
 html, body {
-    background-color: #eadfa9;
+    background-color: #ffffff;
     padding: 0;
     margin: 0;
 }
@@ -11,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #top {
-    background-color: #6b8aaa;
+    background-color: #e71c31;
     width: 100%;
     height: 10vh;
     font-size: 2vh;
@@ -19,11 +22,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-#top a {
-    color: inherit;
-    text-decoration: none;
+    box-shadow: 0 0 20px #da001b;
 }
 
 #top #add {
@@ -34,14 +33,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #eaeaea;
     border: none;
     border-radius: 6px;
-    font-size: 1.6vh;
+    font-size: 1.6vw;
     padding: 0.9vh;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #top #add:hover {
     background-color: #a1a1a1;
+    box-shadow: 0 0 20px #eaeaea;
 }
 
 #top #create {
@@ -52,14 +52,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #eaeaea;
     border: none;
     border-radius: 6px;
-    font-size: 1.6vh;
+    font-size: 1.6vw;
     padding: 0.9vh;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #top #create:hover {
     background-color: #a1a1a1;
+    box-shadow: 0 0 20px #eaeaea;
 }
 
 #restrictions {
@@ -71,14 +72,15 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #eaeaea;
     border: none;
     border-radius: 6px;
-    font-size: 1.6vh;
+    font-size: min(1.6vw, 2vh);
     padding: 0.9vh;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #restrictions:hover {
     background-color: #a1a1a1;
+    box-shadow: 0 0 20px #eaeaea;
 }
 
 #courseContainer {
@@ -109,13 +111,13 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     width: 100px;
     border: none;
-    background-color: #5984c1;
+    background-color: #176d9b;
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .remove {
@@ -125,19 +127,19 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     width: 100px;
     border: none;
-    background-color: #c15959;
+    background-color: #9b172e;
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .replace:hover {
-    background-color: #2e4567;
+    background-color: #104a69;
 }
 
 .remove:hover {
-    background-color: #672e2e;
+    background-color: #69101f;
 }
 
 #gradeContainer {
@@ -152,16 +154,22 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px 20px;
     font-size: 20px;
     background-color: #adb2b6;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
+}
+
+.grade {
+    margin: 5px;
 }
 
 .gradeContent {
     height: 0;
     overflow: hidden;
-    background-color: #c8c29d;
+    background-color: #dfcfd2;
     transition: height 0.3s ease;
     padding: 0 20px;
+    border-radius: 6px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
@@ -175,21 +183,46 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 15px;
     padding: 15px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .gradeButton:hover {
     background-color: #a1a1a1;
 }
 
+#core9, #core10 {
+    color: #ffffff;
+    position: absolute;
+    display: block;
+    border: none;
+    border-radius: 6px;
+    right: 5%;
+    width: 10%;
+    padding: 10px 10px;
+    margin: 5px;
+    background-color: #9b172e;
+    transition: all 0.2s;
+}
+
+#core9:hover, #core10:hover {
+    box-shadow: 0 0 20px #9b172e;
+    background-color: #69101f;
+}
+
 #selectionContainer {
     position: relative;
     width: 50vw;
-    margin: 30px;
-    justify-self: center;
+    margin: 30px auto;
     background-color: #adb2b6;
     border-radius: 20px;
     overflow: hidden;
+}
+
+#selectionText {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
 }
 
 .selection {
@@ -219,14 +252,14 @@ h1, h2, h3, h4, h5, h6 {
     width: calc(50vw / 2 - 10vw);
     height: calc(50vw / 2 - 10vw);
     font-size: calc(50vw / 2 - 14vw);
-    background-color: #5984c1;
+    background-color: #176d9b;
     border-radius: 15px;
     border: none;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #left:hover {
-    background-color: #2e4567;
+    background-color: #104a69;
 }
 
 #right {
@@ -236,14 +269,14 @@ h1, h2, h3, h4, h5, h6 {
     width: calc(50vw / 2 - 10vw);
     height: calc(50vw / 2 - 10vw);
     font-size: calc(50vw / 2 - 14vw);
-    background-color: #c15959;
+    background-color: #9b172e;
     border-radius: 15px;
     border: none;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #right:hover {
-    background-color: #672e2e;
+    background-color: #69101f;
 }
 
 #print {
@@ -255,7 +288,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 15px;
     font-size: 20px;
     border: none;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 #print:hover {
@@ -300,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background-color: #e47878;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .restrictionsButtons button.none {
@@ -313,6 +346,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #a3e478;
 }
 
+/*
 .restrictionsButtons button:hover {
     background-color: #784040;
 }
@@ -325,3 +359,4 @@ h1, h2, h3, h4, h5, h6 {
 .restrictionsButtons button.active:hover {
     background-color: #577840;
 }
+*/

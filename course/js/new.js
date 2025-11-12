@@ -1,5 +1,5 @@
 document.querySelectorAll(".gradeHeader").forEach((gradeHeader) => {
-    gradeHeader.addEventListener("click", (_) => {
+    gradeHeader.addEventListener("click", () => {
         let grade = gradeHeader.parentElement;
         let gradeContent = gradeHeader.nextElementSibling;
 
@@ -56,7 +56,25 @@ function createElements(containerName, data) {
 }
 
 for (let i of ["grade9", "grade10", "grade11", "grade12", "dualcredit"]) {
-    loadCSV(`data/${i}.csv`).then(r => {
-        createElements(i, r);
-    });
+    loadCSV(`data/${i}.csv`).then(r => createElements(i, r));
+}
+for (let i of ["core9", "core10"]) {
+    loadCSV(`data/${i}.csv`).then(r =>
+        document.getElementById(i).addEventListener("click", () => {
+            let courses = JSON.parse(localStorage.courses);
+
+            for (let [name, slots] of Object.entries(r)) {
+                courses[name] = {
+                    slots: slots,
+                    restrictions: Array(9).fill(true)
+                };
+            }
+
+            let replacing = JSON.parse(localStorage.replacing);
+            if (replacing) delete courses[replacing];
+
+            localStorage.courses = JSON.stringify(courses);
+            location.href = "index.html";
+        })
+    );
 }
